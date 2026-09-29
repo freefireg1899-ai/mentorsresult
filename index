@@ -1,0 +1,55 @@
+<div class="info-grid">
+  <div class="info">
+    <small>Enrollment Number</small>
+    <strong>${escapeHTML(student.enrollment)}</strong>
+  </div>
+  <div class="info">
+    <small>Class</small>
+    <strong>${escapeHTML(student.className)}</strong>
+  </div>
+  <div class="info">
+    <small>Batch</small>
+    <strong>${escapeHTML(student.batch)}</strong>
+  </div>
+  <div class="info">
+    <small>Test Date</small>
+    <strong>${escapeHTML(student.date)}</strong>
+  </div>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Subject</th>
+      <th>Marks</th>
+      <th>Maximum</th>
+      <th>Percentage</th>
+    </tr>
+  </thead>
+  <tbody>
+    ${rows}
+    <tr class="total-row">
+      <td>Total</td>
+      <td>${total}</td>
+      <td>${maximum}</td>
+      <td>${percentage.toFixed(2)}%</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="summary">
+  <div class="summary-box">
+    <small>Total Marks</small>
+    <strong>${total}/${maximum}</strong>
+  </div>
+  <div class="summary-box">
+    <small>Percentage</small>
+    <strong>${percentage.toFixed(2)}%</strong>
+  </div>
+  <div class="summary-box">
+    <small>Result</small>
+    <strong>PASSED</strong>
+  </div>
+</div>
+
+<button class="print-btn" onclick="window.print()">Print / Save PDF</button>
